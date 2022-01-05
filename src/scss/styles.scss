@@ -264,6 +264,61 @@ h1, h2, h3, span, p, li, button, a {
     }
 }
 
+.proofs-wrapper {
+    height: 100vh;
+
+    .proofs-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 80px;
+
+        .glasses {
+            width: 850px;
+            height: 620px;
+        }
+
+        .description-container {
+            width: 418px;
+            height: 480px;
+            background-color: $light-blue-bg;
+            border-radius: 0px;
+            border-radius: 0px;
+            transform: translate(-175px, 80px);
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0 50px;
+
+            .description-title {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                font-size: 36px;
+                color: $dark-text;
+            }
+
+            .text {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                font-size: 16px;
+                color: $dark-text;
+            }
+
+            .secondary-button {
+                width: 170px;
+                height: 54px;
+                background-color: transparent;
+                border-radius: 27px;
+                color: $dark-text;
+                border: 1px solid #031622;
+                cursor: pointer;
+                transform: translate(0px, 80px);
+            }
+        }
+    }
+}
+
 /*.customer-reviews-wrapper::before{
     content: '';
     background-image: url(/src/assets/img/customer-reviews.png);
