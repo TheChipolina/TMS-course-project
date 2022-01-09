@@ -16,19 +16,37 @@ h1, h2, h3, span, p, li, button, a {
     background-color: $dark-beige-bg;
     width: 100%;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .pop-up {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.cross-container {
+    transform: translate(700px, -5px);
 }
 
 .cross {
-    width: 1em;
-    height: 1em;
-    background-color: black;
-    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.cross::before {
+    content: '';
+    width: 10px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    transform: translate(-5px, 0) rotate(-45deg);
+}
+
+.cross::after {
+    content: '';
+    width: 10px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    transform: translate(-5px, 0) rotate(45deg);
 }
 
 .header-wrapper {
@@ -50,6 +68,7 @@ h1, h2, h3, span, p, li, button, a {
         font-size: 16px;
         color: $white-text;
         cursor: pointer;
+        padding-right: 105px;
     }
 
     .cart-button {
@@ -59,6 +78,15 @@ h1, h2, h3, span, p, li, button, a {
         height: 24px;
         cursor: pointer;
     }
+}
+
+.cart-button::before {
+    content: '1';
+    width: 20px;
+    height: 21px;
+    color: $dark-text;
+    border: 1px solid $dark-beige-bg;
+    background-color: $dark-beige-bg;
 }
 
 .main-title {
@@ -153,7 +181,7 @@ h1, h2, h3, span, p, li, button, a {
 }
 
 .products-wrapper {
-    height: 100vh;
+    height: 1540px;
 
     .products-subtitle {
         font-size: 19px;
@@ -208,12 +236,16 @@ h1, h2, h3, span, p, li, button, a {
     height: 100%;
     gap: 68px;
 }
-.whitening-gel {
+
+.whitening-kit {
     background-color: $skyblue-bg;
     width: 855px;
     height: 500px;
     position: relative;
 
+    .whitening-container-2 {
+        transform: translate(40px, 60px);
+    }
 }
 
 .whitening-product{
@@ -235,14 +267,116 @@ h1, h2, h3, span, p, li, button, a {
     cursor: pointer;
 }
 
-.whitening-image {
+.whitening-kit-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .whitening-kit {
+        width: 420px;
+        height: 371px;
+    }
+}
+
+
+.products-container-2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+
+    .whitening-gel {
+        background-color: $light-blue-bg;
+        width: 855px;
+        height: 500px;
+        position: relative;
+
+        .price-2 {
+            color: #08263F99;
+        }
+        .whitening-container-3{
+            transform: translate(40px, 60px);
+        }
+
+        .whitening-gel-block {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .whitening-gel-image {
+                width: 449px;
+                height: 374px;
+            }
+
+            .whitening-button-3 {
+                background-color: #225B93;
+                width: 775px;
+                height: 54px;
+                border-radius: 27px;
+                color: #FFFFFF;
+                border-color: transparent;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.accessories {
+    width: 427px;
+    height: 500px;
+    background-image: url(/src/assets/img/refills-accessories.png);
+    background-size: cover;
+    position: relative;
+
+    .whitening-container-4 {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        gap: 68px;
+            
+        .whitening-title-4 {
+            font-size: 45px;
+            color: $white-text;
+            text-align: center;
+        }
+    
+        .whitening-button-4 {
+            background-color: $marine-blue-bg;
+            width: 170px;
+            height: 54px;
+            border-radius: 27px;
+            color: $white-text;
+            border-color: transparent;
+            cursor: pointer;
+        }
+    }
+}
+
+.quote-wrapper {
+    background-color: $light-blue-bg;
+    height: 600px;
+
+    .quote-image {
+        text-align: center;
+        padding: 130px 0 20px 0;
+    }
+
+    .quote-text {
+        text-align: center;
+        font-size: 36px;
+        color: $dark-text;
+    }
+}
+
+.small-logo {
+    width: 33px;
+    height: 44px;
 }
 
 .customer-reviews-wrapper {
     width: 100%;
-    height: 100vh;
+    height: 1094px;
     background-color: $primary-bg;
     
     .customer-reviews-subtitle {
@@ -265,9 +399,10 @@ h1, h2, h3, span, p, li, button, a {
 }
 
 .proofs-wrapper {
-    height: 100vh;
+    width: 100%;
+    height: 1540px;
 
-    .proofs-container {
+    .proofs-container-1 {
         display: flex;
         justify-content: center;
         padding-top: 80px;
@@ -313,26 +448,148 @@ h1, h2, h3, span, p, li, button, a {
                 color: $dark-text;
                 border: 1px solid #031622;
                 cursor: pointer;
-                transform: translate(0px, 80px);
+                transform: translate(0%, 70%);
             }
         }
     }
 }
 
-/*.customer-reviews-wrapper::before{
-    content: '';
-    background-image: url(/src/assets/img/customer-reviews.png);
-    position: absolute;
-    z-index: 1;
-    background-size: cover;
-}*/
+.proofs-container-2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    margin-right: 100px;
 
-/*.whitening-gel::before {
-    content: '';
-    background-image: url(/src/assets/img/whitening-kit.png);
-    background-size: cover;
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    z-index: 1;
-}*/
+    .person {
+        width: 850px;
+        height: 620px;
+    }
+
+    .description-container-2 {
+        width: 418px;
+        height: 480px;
+        background-color: $light-beige-bg;
+        border-radius: 0px;
+        border-radius: 0px;
+        transform: translate(180px, 80px);
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0 50px;
+
+        .description-title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 36px;
+            color: $dark-text;
+        }
+
+        .text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: $dark-text;
+        }
+
+        .secondary-button {
+            width: 170px;
+            height: 54px;
+            background-color: transparent;
+            border-radius: 27px;
+            color: $dark-text;
+            border: 1px solid #031622;
+            cursor: pointer;
+            transform: translate(0%, 70%);
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 582px;
+    background-color: $primary-bg;
+    padding: 100px 70px 10px 70px;
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+
+        .logo-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 420px;
+
+            .footer-logo {
+                width: 134px;
+                height: 31px;
+            }
+        }
+    }
+}
+
+.catalogue {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+
+    .catalogue-subtitle {
+        color: $dark-beige-bg;
+        font-size: 18px;
+        padding-bottom: 40px;
+        cursor: pointer;
+    }
+}
+
+.sign-up-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+
+    .sign-up-line {
+        border-bottom: 1px solid $white-text;
+        width: 310px;
+    }
+
+    .footer-button {
+        width: 171px;
+        height: 54px;
+        background-color: transparent;
+        border-radius: 27px;
+        color: $white-text;
+        border: 1px solid $white-text;
+        cursor: pointer;
+    }
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    width: 115px;
+}
+
+
+.sm-logo {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
+
+.catalogue-text {
+    color: $white-text;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+}
+
+.trade-mark {
+    color: $white-text;
+}
+
+.footer-logo {
+    width: 134px;
+    height: 31px;
+}
